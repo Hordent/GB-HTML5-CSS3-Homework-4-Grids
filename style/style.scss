@@ -1,5 +1,28 @@
 @import "variables";
 
+@mixin respondTo($_media) {
+  @if $_media == phones {
+    @media (max-width: 575px) and (max-width: 575px){
+      @content;
+    }
+  } @else if $_media == wide-phones {
+    @media (min-width: 576px) and (max-width: 767px){
+      @content;
+    }
+  } @else if $_media == tablets {
+    @media (min-width: 768px) and (max-width: 991px) {
+      @content;
+    }
+  } @else if $_media == small-desktops {
+    @media (min-width: 992px) and (max-width: 1199px){
+      @content;
+    }
+  } @else if $_media == lg-desktops {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}
 @font-face {
   font-family: SocialIco;
   src: url("../fonts/Socialico.ttf");
@@ -90,7 +113,7 @@ h2 {
     font-size: 16px;
     float: right;
     margin-right: 20px;
-    margin-bottom: 33px;
+    
   }
   .mylogo {
     color: #333333;
@@ -143,7 +166,7 @@ h2 {
 }
 
 main {
-  margin: -80px 20px 0;
+  margin: -130px 20px 0;
   background-color: #fff;
   nav {
     border-top-left-radius: 5px;
@@ -256,37 +279,41 @@ main {
       }
     }
     .module1-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 35px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 35px;
+      @include respondTo(tablets) {
+        grid-template-columns: 1fr 1fr;
       }
-  }
-}
-
-.module1-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 35px; 
-  section{
-    img {
-        height: 64px;
-        width: 64px;
-        float: left;
+      @include respondTo(wide-phones) {
+        grid-template-columns: 1fr;
       }
-      .module-h4 {
-        padding-left: 70px;
-        color: #97455f;
-        font-family: Georgia;
-        font-size: 16px;
-        font-weight: 400;
+      @include respondTo(phones) {
+        grid-template-columns: 1fr;
       }
-      .module-p {
-        padding-left: 70px;
-        color: #999999;
-        font-family: Georgia;
-        font-size: 13px;
-        font-weight: 400;
-        line-height: 18.2px;
+      
+      section {
+        img {
+          height: 64px;
+          width: 64px;
+          float: left;
+        }
+        .module-h4 {
+          padding-left: 70px;
+          color: #97455f;
+          font-family: Georgia;
+          font-size: 16px;
+          font-weight: 400;
+        }
+        .module-p {
+          padding-left: 70px;
+          color: #999999;
+          font-family: Georgia;
+          font-size: 13px;
+          font-weight: 400;
+          line-height: 18.2px;
+        }
       }
+    }
   }
 }

@@ -96,7 +96,6 @@ h2 {
   font-size: 16px;
   float: right;
   margin-right: 20px;
-  margin-bottom: 33px;
 }
 
 .additional .mylogo {
@@ -154,7 +153,7 @@ h2 {
 }
 
 main {
-  margin: -80px 20px 0;
+  margin: -130px 20px 0;
   background-color: #fff;
 }
 
@@ -296,21 +295,34 @@ main nav a:hover {
   grid-gap: 35px;
 }
 
-.module1-content {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 35px;
+@media (min-width: 768px) and (max-width: 991px) {
+  .mainContent .module1 .module1-content {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
 }
 
-.module1-content section img {
+@media (min-width: 576px) and (max-width: 767px) {
+  .mainContent .module1 .module1-content {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 575px) and (max-width: 575px) {
+  .mainContent .module1 .module1-content {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+.mainContent .module1 .module1-content section img {
   height: 64px;
   width: 64px;
   float: left;
 }
 
-.module1-content section .module-h4 {
+.mainContent .module1 .module1-content section .module-h4 {
   padding-left: 70px;
   color: #97455f;
   font-family: Georgia;
@@ -318,7 +330,7 @@ main nav a:hover {
   font-weight: 400;
 }
 
-.module1-content section .module-p {
+.mainContent .module1 .module1-content section .module-p {
   padding-left: 70px;
   color: #999999;
   font-family: Georgia;
