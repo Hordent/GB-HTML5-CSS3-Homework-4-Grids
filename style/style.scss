@@ -1,4 +1,4 @@
-@import "../variables.scss";
+@import "../variables";
 
 @font-face {
   font-family: SocialIco;
@@ -225,15 +225,15 @@ main {
         }
       }
       .first-item {
-        background: url("../img/1.jpg");
+        background: url(#{$imagePath}/1.jpg);
         background-size: cover;
       }
       .second-item {
-        background: url("../img/2.jpg");
+        background: url(#{$imagePath}/2.jpg);
         background-size: cover;
       }
       .third-item {
-        background: url("../img/3.jpg");
+        background: url(#{$imagePath}/3.jpg);
         background-size: cover;
       }
     }

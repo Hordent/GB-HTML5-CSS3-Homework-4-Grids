@@ -251,17 +251,17 @@ main nav a:hover {
 }
 
 .mainContent .my-carousel .carousel-inner .first-item {
-  background: url("../img/1.jpg");
+  background: url(../img/1.jpg);
   background-size: cover;
 }
 
 .mainContent .my-carousel .carousel-inner .second-item {
-  background: url("../img/2.jpg");
+  background: url(../img/2.jpg);
   background-size: cover;
 }
 
 .mainContent .my-carousel .carousel-inner .third-item {
-  background: url("../img/3.jpg");
+  background: url(../img/3.jpg);
   background-size: cover;
 }
 
@@ -286,6 +286,14 @@ main nav a:hover {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+}
+
+.mainContent .module1 .module1-content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 35px;
 }
 
 .module1-content {
